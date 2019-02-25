@@ -1,5 +1,6 @@
 const faker = require("faker");
-const json2csv = require('json2csv').parse;
+const json2csv = require("json2csv").parse;
+const fs = require("fs");
 
 faker.seed(1337);
 
@@ -17,4 +18,4 @@ for (let i = 0; i < 100; i++) {
 
 const csv = json2csv(data);
 
-console.log(csv);
+fs.writeFileSync("user/users.csv", csv);
