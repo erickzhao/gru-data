@@ -5,7 +5,7 @@ const fs = require("fs");
 faker.seed(1337);
 
 const data = [];
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 400; i++) {
   data.push({
     key: `${faker.finance.bic()}-${faker.finance.bic()}-${faker.finance.bic()}`,
     listing_id: i % 45 + 1,
