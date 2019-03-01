@@ -10,8 +10,8 @@ for (let i = 0; i < 100; i++) {
   const last = faker.name.lastName();
   data.push({
     username: faker.internet.userName(first,last),
-    password: faker.internet.password(),
     email: faker.internet.email(first,last),
+    password: faker.internet.password(),
     creation_date: faker.date.recent(1000),
     name: `${first} ${last}`
   });
