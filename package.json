@@ -18,7 +18,7 @@
   "homepage": "https://github.com/erickzhao/gru-data#readme",
   "description": "",
   "dependencies": {
-    "faker": "^4.1.0",
+    "faker": "github:Marak/faker.js#master",
     "json2csv": "^4.3.5"
   }
 }
