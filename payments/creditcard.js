@@ -1,12 +1,11 @@
 const faker = require("faker");
+const users = require("../user/users.json");
 const json2csv = require("json2csv").parse;
-const getUsers = require('../user/user').getUsers
 const fs = require("fs");
 
 faker.seed(1337);
 
 const data = [];
-const users = getUsers();
 
 for (let i = 0; i < 100; i++) {
   data.push({
