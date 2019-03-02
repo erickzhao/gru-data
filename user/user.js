@@ -4,19 +4,25 @@ const fs = require("fs");
 
 faker.seed(1337);
 
-const data = [];
-for (let i = 0; i < 100; i++) {
-  const first = faker.name.firstName();
-  const last = faker.name.lastName();
-  data.push({
-    username: faker.internet.userName(first,last),
-    email: faker.internet.email(first,last),
-    password: faker.internet.password(),
-    creation_date: faker.date.recent(1000),
-    name: `${first} ${last}`
-  });
+function getUsers() {
+  const data = [];
+  for (let i = 0; i < 100; i++) {
+    const first = faker.name.firstName();
+    const last = faker.name.lastName();
+    data.push({
+      username: faker.internet.userName(first, last),
+      password: faker.internet.password(),
+      email: faker.internet.email(first, last),
+      creation_date: faker.date.recent(1000),
+      name: `${first} ${last}`
+    });
+  }
+
+  return data;
 }
 
-const csv = json2csv(data);
+const csv = json2csv(getUsers());
 
 fs.writeFileSync("user/users.csv", csv);
+
+module.exports = { getUsers };
